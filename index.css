@@ -14,14 +14,14 @@ body{
 .container{
     width: 50%;
     margin: auto;
-    padding: 2em;
+    padding-top: 25%;
 }
 
 
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 0.5em;
     grid-row-gap: 0.5em;
@@ -56,6 +56,8 @@ body{
     border-style: solid;
     border-width: 0.01em;
     text-align: center;
+    
+    
 }
 
 #one{
@@ -76,18 +78,23 @@ body{
 #six {
     grid-area: six;
 }
+
 #seven{
     grid-area: seven;;
 }
+
 #eight{
     grid-area: eight;
 }
+
 #nine{
     grid-area: nine;
 }
+
 #zero{
     grid-area: add;
 }
+
 #equals{
-    grid-area: times;
+    grid-area: minus;
 }
