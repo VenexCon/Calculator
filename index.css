@@ -1,0 +1,93 @@
+
+* {
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #0F115E;
+    color: #E5EB38;
+}
+
+
+/*Contains keyboard & display */
+
+.container{
+    width: 50%;
+    margin: auto;
+    padding: 2em;
+}
+
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0.5em;
+    grid-row-gap: 0.5em;
+    grid-template-areas: 
+    "display display display display display"
+    ". . . . equals"
+    "seven eight nine add."
+    "four five six minus."
+    "one two three times."
+    "zero . . divide.";
+    border-style: solid;
+    padding: 1em;
+}
+
+#display{
+    grid-area: display;
+    width: 90%; 
+    height: auto;
+    border:#E5EB38; 
+    border-style: dashed;
+    padding: 1em;
+    margin: auto;
+}
+
+#equals {
+    grid-area: equals;
+}
+
+.calcButton {
+    padding: 1em; 
+    border: #E5EB38;
+    border-style: solid;
+    border-width: 0.01em;
+    text-align: center;
+}
+
+#one{
+ grid-area: one;   
+}
+#two{
+    grid-area: two;
+}
+#three{
+    grid-area: three;
+}
+#four{
+    grid-area: four;
+}
+#five{
+    grid-area: five;
+}
+#six {
+    grid-area: six;
+}
+#seven{
+    grid-area: seven;;
+}
+#eight{
+    grid-area: eight;
+}
+#nine{
+    grid-area: nine;
+}
+#zero{
+    grid-area: add;
+}
+#equals{
+    grid-area: times;
+}
