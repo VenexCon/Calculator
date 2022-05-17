@@ -7,8 +7,8 @@
 }
 
 body{
-    background-color: #0F115E;
-    color: #E5EB38;
+    background-color: #03041a;
+    color: #c3c914;
 }
 
 
@@ -18,19 +18,20 @@ body{
     width: 50%;
     margin: auto;
     padding-top: 25%;
-  border-style:solid;
-  border-color: red;
-  padding: 1em; 
+    border-style:solid;
+    border-color: rgb(80, 45, 45);
+    padding: 1em;
+    width: min-content;
 }
 
 
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(autofit, minmax(240px,  1fr));
-    grid-template-rows: repeat(autofit, minmax(240px,  1fr));
-    grid-column-gap:0.1em;
-    grid-row-gap: 0.1em;
+    grid-template-columns: repeat(autofit, minmax(0px,  1fr));
+    grid-template-rows: repeat(autofit, minmax(0px,  1fr));
+    grid-column-gap:0.25em;
+    grid-row-gap: 0.25em;
     grid-template-areas: 
     "display display display display display"
     ". . . . equals"
@@ -40,7 +41,7 @@ body{
     "zero . . divide.";
     border-style: solid;
     padding: 0.5em;
-    max-width:inherit;
+    width: min-content;
 }
 
 #display{
@@ -48,11 +49,21 @@ body{
     width: 75%; 
     height: auto;
     border:#E5EB38; 
-    border-style: dashed;
-    border-width: 0.5em;
+    border-style: solid;
+    border-width: 0.15em;
     padding: 1em;
     margin: auto;
+    width: 100%;
+    text-align: end;
 }
+
+.calcButton:hover{
+    box-shadow: 0.15em 0.1em #74a00c;
+}
+.calcButton:active{
+    box-shadow: none;
+}
+
 
 #equals {
     grid-area: equals;
@@ -63,12 +74,14 @@ body{
     padding:1.5em; 
     border: #E5EB38;
     border-style: solid;
-    border-width: 0.33em;
+    border-width: 0.15em;
     text-align: center;
-    height: 5em;
-    width: 5em;
     justify-self: center;
+    min-width: none;
+    max-width:min-content;
 }
+
+
 
 #one{
  grid-area: one;   
@@ -107,4 +120,8 @@ body{
 
 #equals{
     grid-area: minus;
+}
+
+#allClear{
+    grid-area: times;
 }
