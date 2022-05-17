@@ -39,34 +39,46 @@ function operate (a,b,operand) {
 
 //grid Calc Buttons
 
-const addBtn = document.querySelector(`add`);
 
-const subtractBtn = document.querySelector(`minus`)
 
-const divideBtn = document.querySelector(`divide`)
 
-const timesBtn = document.querySelector(`times`)
 
-const sevenBtn = document.querySelector(`seven`)
 
-const eightBtn = document.querySelector(`eight`)
 
-const nineBtn = document.querySelector(`nine`)
 
-const zeroBtn = document.querySelector(`zero`)
 
-const fourBtn = document.querySelector(`four`)
 
-const fiveBtn = document.querySelector(`five`)
+const addBtn = document.getElementById(`add`);
+    addBtn.addEventListener(`click`, () => {
+        console.log("what did you just click m8?")
+    })
 
-const sixBtn = document.querySelector(`six`)
+const subtractBtn = document.getElementById(`minus`)
 
-const EqualsBtn = document.querySelector(`equals`)
+const divideBtn = document.getElementById(`divide`)
 
-const oneBtn = document.querySelector(`one`)
+const timesBtn = document.getElementById(`times`)
 
-const twoBtn = document.querySelector(`two`)
+const sevenBtn = document.getElementById(`seven`)
 
-const threeBtn = document.querySelector(`three`)
+const eightBtn = document.getElementById(`eight`)
 
-const allClearBtn = document.querySelector(`allClear`)
+const nineBtn = document.getElementById(`nine`)
+
+const zeroBtn = document.getElementById(`zero`)
+
+const fourBtn = document.getElementById(`four`)
+
+const fiveBtn = document.getElementById(`five`)
+
+const sixBtn = document.getElementById(`six`)
+
+const EqualsBtn = document.getElementById(`equals`)
+
+const oneBtn = document.getElementById(`one`)
+
+const twoBtn = document.getElementById(`two`)
+
+const threeBtn = document.getElementById(`three`)
+
+const allClearBtn = document.getElementById(`allClear`)
