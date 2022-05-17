@@ -7,8 +7,13 @@
 
 
 
+
+
+
 // Base level Functions 
-const add = (a,b) => (a+b);
+function add(a, b) {
+    return (a + b);
+}
 const minus = (a, b) => (a-b); 
 const divide = (a,b) => (a/b); 
 const times = (a, b) => (a * b)
@@ -30,3 +35,38 @@ function operate (a,b,operand) {
        
     }
 }
+
+
+//grid Calc Buttons
+
+const addBtn = document.querySelector(`add`);
+
+const subtractBtn = document.querySelector(`minus`)
+
+const divideBtn = document.querySelector(`divide`)
+
+const timesBtn = document.querySelector(`times`)
+
+const sevenBtn = document.querySelector(`seven`)
+
+const eightBtn = document.querySelector(`eight`)
+
+const nineBtn = document.querySelector(`nine`)
+
+const zeroBtn = document.querySelector(`zero`)
+
+const fourBtn = document.querySelector(`four`)
+
+const fiveBtn = document.querySelector(`five`)
+
+const sixBtn = document.querySelector(`six`)
+
+const EqualsBtn = document.querySelector(`equals`)
+
+const oneBtn = document.querySelector(`one`)
+
+const twoBtn = document.querySelector(`two`)
+
+const threeBtn = document.querySelector(`three`)
+
+const allClearBtn = document.querySelector(`allClear`)
