@@ -38,47 +38,75 @@ function operate (a,b,operand) {
 
 
 //grid Calc Buttons
+const allBtns = document.querySelectorAll(`.calcbuttons`).forEach(Element => Element.addEventListener(`click`, (e) =>{
+    console.log(e.target.innertext);
+}) )
+
+addEventListener(`click`, (e) => {
+    console.log(e.target.innertext);
+})
 
 
-
-
-
-
-
-
-
-
-const addBtn = document.getElementById(`add`);
-    addBtn.addEventListener(`click`, () => {
-        console.log("what did you just click m8?")
+const addBtn = document.getElementById(`add`).addEventListener(`click`, (e) => {
+        console.log(e.target);
     })
 
-const subtractBtn = document.getElementById(`minus`)
+const subtractBtn = document.getElementById(`minus`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const divideBtn = document.getElementById(`divide`)
+const divideBtn = document.getElementById(`divide`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const timesBtn = document.getElementById(`times`)
+const timesBtn = document.getElementById(`times`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const sevenBtn = document.getElementById(`seven`)
+const sevenBtn = document.getElementById(`seven`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const eightBtn = document.getElementById(`eight`)
+const eightBtn = document.getElementById(`eight`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const nineBtn = document.getElementById(`nine`)
+const nineBtn = document.getElementById(`nine`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const zeroBtn = document.getElementById(`zero`)
+const zeroBtn = document.getElementById(`zero`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const fourBtn = document.getElementById(`four`)
+const fourBtn = document.getElementById(`four`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const fiveBtn = document.getElementById(`five`)
+const fiveBtn = document.getElementById(`five`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const sixBtn = document.getElementById(`six`)
+const sixBtn = document.getElementById(`six`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const EqualsBtn = document.getElementById(`equals`)
+const EqualsBtn = document.getElementById(`equals`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const oneBtn = document.getElementById(`one`)
+const oneBtn = document.getElementById(`one`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const twoBtn = document.getElementById(`two`)
+const twoBtn = document.getElementById(`two`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const threeBtn = document.getElementById(`three`)
+const threeBtn = document.getElementById(`three`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
 
-const allClearBtn = document.getElementById(`allClear`)
+const allClearBtn = document.getElementById(`allClear`).addEventListener(`click`, (e) => {
+    console.log(e.target);
+})
