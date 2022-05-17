@@ -49,14 +49,15 @@ body{
 #display{
     grid-area: display;
     width: 75%; 
-    height: auto;
+    height: min-content;
     border:#e9f022cb;; 
     border-style: solid;
     border-width: 0.15em;
-    padding: 0.em;
+    padding: 0.01em 0.5em;
     margin: auto;
     width: 100%;
     text-align: end;
+    font-size: x-large;
 }
 
 .calcButton:hover{
