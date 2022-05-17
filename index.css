@@ -8,7 +8,8 @@
 
 body{
     background-color: #03041a;
-    color: #c3c914;
+    color: #e9f022cb;
+    margin-top: 5em;
 }
 
 
@@ -42,16 +43,17 @@ body{
     border-style: solid;
     padding: 0.5em;
     width: min-content;
+    margin: auto;
 }
 
 #display{
     grid-area: display;
     width: 75%; 
     height: auto;
-    border:#E5EB38; 
+    border:#e9f022cb;; 
     border-style: solid;
     border-width: 0.15em;
-    padding: 1em;
+    padding: 0.em;
     margin: auto;
     width: 100%;
     text-align: end;
