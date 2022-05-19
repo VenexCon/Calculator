@@ -6,7 +6,7 @@
 
 //CONSTS
 const displayText = document.getElementById("display") 
-let displayArray = [];
+let currentArray = [];
 
 
 
@@ -52,8 +52,18 @@ const operatorBtns = document.querySelectorAll(".operatorButton")
 
 
 function updateDisplay (arg) {
-    displayArray.push(arg);  
-  return displayText.textContent = displayArray.join("");
+    currentArray.push(arg);  
+  return displayText.textContent = currentArray.join("");
 }
 
 
+function equals (array) {
+let int1 = array[0]; 
+let int2 = array[2]
+let operand = array[1]
+    console.log(int1)
+    console.log(int2)
+    console.log(operand)
+
+
+}
