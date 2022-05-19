@@ -6,7 +6,7 @@
 
 //CONSTS
 const displayText = document.getElementById("display") 
-
+let displayArray = [];
 
 
 
@@ -37,18 +37,23 @@ function operate (a,b,operand) {
 
 
 
-const numberBtns = document.querySelectorAll(`.numberButton`)
-    numberBtns.forEach(btn => btn.addEventListener(`click`, (e) =>{
-    console.log(parseInt(e.target.innerText));
+const numberBtns = document.querySelectorAll(".numberButton")
+    numberBtns.forEach(btn => btn.addEventListener("click", (e) =>{
+    console.log(parseInt(e.target.textContent));
+    updateDisplay(parseInt(e.target.textContent));
     }));
 
-const operatorBtns = document.querySelectorAll(`.operatorButton`)
-    operatorBtns.forEach(btn => btn.addEventListener(`click`, (e) =>{
-    console.log(e.target.innerText);
+const operatorBtns = document.querySelectorAll(".operatorButton")
+    operatorBtns.forEach(btn => btn.addEventListener("click", (e) =>{
+    console.log(e.target.textContent);
+    updateDisplay(e.target.textContent)
     }));
  
+
+
 function updateDisplay (arg) {
-  return displayText.innerText = arg;
+    displayArray.push(arg);  
+  return displayText.textContent = displayArray.join("");
 }
 
-console.log(updateDisplay("+"))
+

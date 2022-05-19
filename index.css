@@ -58,6 +58,8 @@ body{
     width: 100%;
     text-align: end;
     font-size: x-large;
+    overflow: hidden;
+    max-width: 100%;
 }
 
 .calcButton:hover{
