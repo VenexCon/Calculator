@@ -1,5 +1,3 @@
-// create basic functions - Done 
-//create a function that an operand can be passed to - completed using Switch statements
 //store numbers as a held variable, once an operand is selected the number should be pushed to an array. 
 //the operand should be pushed to another variable, or a variable called. 
 // repeat until equals sign is pressed. 
@@ -12,37 +10,51 @@ let currentArray = [];
 
 
 // Base level Functions 
-const add = (a,b) => (a+b);
-const minus = (a, b) => (a-b); 
-const divide = (a,b) => (a/b); 
-const times = (a, b) => (a * b)
+//when called they clear the original array, update the currentArray with the correct value;
+const add = function (a,b) {};
+const minus =(a,b) => (a-b); 
+const divide =(a,b) => (a/b); 
+const times = (a,b) => (a*b)
 
 
 
-// Base level function for operands. 
-function operate (a,b,operand) {
-    switch (operand) {
-        case "+":
-            return add(a,b); 
-        case"-":
-            return minus(a,b);
-        case "/":
-            return divide(a,b);
-        case "*":
-            return times(a,b);
-        break; 
-       
-    }
-}
+
+//This function needs to destructure current array
+//return the correct function
+//updatet he displayArray to current value. 
+//needs to be called at all times when operand has acceptable values. 
+function equals (array) {
+    let a = array[0]; 
+    let b = array[2];
+    let operator = array[1];
+        switch(operator) {
+            case ("+"):
+                console.log(add(a,b));
+            break;
+            case ("-"):
+                console.log(minus(a, b));
+            break;
+            case("*"):
+                console.log(times(a,b));
+            break;
+            case("/"):
+                console.log(divide(a,b));
+            break; 
+        }
+    };
 
 
 
+// all number buttons, return intergers. 
 const numberBtns = document.querySelectorAll(".numberButton")
     numberBtns.forEach(btn => btn.addEventListener("click", (e) =>{
     console.log(parseInt(e.target.textContent));
     updateDisplay(parseInt(e.target.textContent));
     }));
 
+
+
+//all operand buttons 
 const operatorBtns = document.querySelectorAll(".operatorButton")
     operatorBtns.forEach(btn => btn.addEventListener("click", (e) =>{
     console.log(e.target.textContent);
@@ -51,19 +63,20 @@ const operatorBtns = document.querySelectorAll(".operatorButton")
  
 
 
+// is called when mouseevent clicks.
 function updateDisplay (arg) {
     currentArray.push(arg);  
   return displayText.textContent = currentArray.join("");
+};
+
+
+
+//create a function that pushes the old array onto a historical array. toggle display. 
+function historialArray(){};
+
+//Function to clear current display: 
+function clearDisplay () {
+    let newArray = []; 
+    return currentArray = newArray; 
 }
 
-
-function equals (array) {
-let int1 = array[0]; 
-let int2 = array[2]
-let operand = array[1]
-    console.log(int1)
-    console.log(int2)
-    console.log(operand)
-
-
-}
