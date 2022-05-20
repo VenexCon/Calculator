@@ -29,19 +29,20 @@ function equals (array) {
     let operator = array[1];
         switch(operator) {
             case ("+"):
-                console.log(add(a,b));
+                return add(a,b);
             break;
             case ("-"):
-                console.log(minus(a, b));
+               return minus(a, b);
             break;
             case("*"):
-                console.log(times(a,b));
+                return times(a,b)
             break;
             case("/"):
-                console.log(divide(a,b));
+               return divide(a,b);
             break; 
         }
     };
+
 
 
 
