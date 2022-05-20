@@ -8,13 +8,12 @@ let currentArray = [];
 
 
 
-
 // Base level Functions 
 //when called they clear the original array, update the currentArray with the correct value;
-const add = function (a,b) {};
+const add = (a,b) => (a+b);
 const minus =(a,b) => (a-b); 
 const divide =(a,b) => (a/b); 
-const times = (a,b) => (a*b)
+const times = (a,b) => (a*b);
 
 
 
@@ -54,7 +53,6 @@ const numberBtns = document.querySelectorAll(".numberButton")
     }));
 
 
-
 //all operand buttons 
 const operatorBtns = document.querySelectorAll(".operatorButton")
     operatorBtns.forEach(btn => btn.addEventListener("click", (e) =>{
@@ -62,22 +60,8 @@ const operatorBtns = document.querySelectorAll(".operatorButton")
     updateDisplay(e.target.textContent)
     }));
  
-
-
 // is called when mouseevent clicks.
 function updateDisplay (arg) {
     currentArray.push(arg);  
   return displayText.textContent = currentArray.join("");
 };
-
-
-
-//create a function that pushes the old array onto a historical array. toggle display. 
-function historialArray(){};
-
-//Function to clear current display: 
-function clearDisplay () {
-    let newArray = []; 
-    return currentArray = newArray; 
-}
-
