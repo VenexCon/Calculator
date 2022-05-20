@@ -5,7 +5,9 @@
 //CONSTS
 const displayText = document.getElementById("display") 
 let currentArray = [];
-
+let a;
+let b;
+let operand; 
 
 
 // Base level Functions 
@@ -14,8 +16,6 @@ const add = (a,b) => (a+b);
 const minus =(a,b) => (a-b); 
 const divide =(a,b) => (a/b); 
 const times = (a,b) => (a*b);
-
-
 
 
 //This function needs to destructure current array
@@ -44,12 +44,11 @@ function equals (array) {
 
 
 
-
 // all number buttons, return intergers. 
 const numberBtns = document.querySelectorAll(".numberButton")
     numberBtns.forEach(btn => btn.addEventListener("click", (e) =>{
     console.log(parseInt(e.target.textContent));
-    updateDisplay(parseInt(e.target.textContent));
+    return updateDisplay(parseInt(e.target.textContent));
     }));
 
 
@@ -57,11 +56,19 @@ const numberBtns = document.querySelectorAll(".numberButton")
 const operatorBtns = document.querySelectorAll(".operatorButton")
     operatorBtns.forEach(btn => btn.addEventListener("click", (e) =>{
     console.log(e.target.textContent);
-    updateDisplay(e.target.textContent)
+    return updateDisplay(e.target.textContent)
     }));
  
+
 // is called when mouseevent clicks.
 function updateDisplay (arg) {
     currentArray.push(arg);  
   return displayText.textContent = currentArray.join("");
+};
+
+function storeVars (array){
+    let compactArray = parseInt(array); 
+    if(compactArray === NaN){
+        return operand = compactArray; 
+    } else if ( a == "")
 };
