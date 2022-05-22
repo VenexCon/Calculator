@@ -4,12 +4,14 @@
 
 //CONSTS
 const displayText = document.getElementById("display") 
-let currentArray = [];
+let currentArray = [1,2,3];
+let currentArray2 = [4,5,6];
+let currentArrayO = ["+"];
+let total = null;
 let a = null;
 let b = null;
 let operand = null;
-let total = null;
-let currentInteger = null; 
+let currentinteger = null; 
 //Base functions
 const add = (a,b) => (a+b);
 const minus =(a,b) => (a-b); 
@@ -20,7 +22,7 @@ const times = (a,b) => (a*b);
 //This function takes the currentArray and turns it into a string. 
 function convertArraytoString (currentArray){
     if (typeof(currentArray[0]) === "number" ){
-  return parseInt(currentArray.join(""));
+  return currentInteger = parseInt(currentArray.join(""));
     } else return currentInteger = (currentArray.join(""));
 };
 
@@ -41,7 +43,7 @@ function testGrab (currentInteger) {
 // If statements need to be added to check that all three variables are declared (if (!= null))
 function equals () {
     if (a !== null && b!== null && operand !== null){
-        switch(operator) {
+        switch(operand) {
             case ("+"):
                 return total = add(a,b);
             break;
@@ -55,7 +57,7 @@ function equals () {
                return total = divide(a,b);
             break; 
         }
-    } else return
+    } else return console.log("more Operators needed")
     };
 
 
@@ -80,3 +82,12 @@ function updateDisplay (arg) {
     currentArray.push(arg);  
   return displayText.textContent = currentArray.join("");
 };
+
+// Test run 1
+console.log(convertArraytoString(currentArray))
+console.log(testGrab(currentInteger));
+console.log(convertArraytoString(currentArray2))
+console.log(testGrab(currentInteger));
+console.log(convertArraytoString(currentArrayO))
+console.log(testGrab(currentInteger))
+console.log(equals())
