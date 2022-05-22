@@ -9,39 +9,28 @@ let a = null;
 let b = null;
 let operand = null;
 let total = null;
-
-
-
-function testGrab (compactArray) {
-    if(compactArray == typeof(Number) && a == null) {
-     return a = compactArray;
-    } else if (compactArray == typeof(Number) && a !== null){
-        return b = compactArray;
-    } else if (compactArray == typeof(String)){
-        return operand = compactArray; 
-    }
-};
-
-
-
-// Base level Functions 
-//when called they clear the original array, update the currentArray with the correct value;
 const add = (a,b) => (a+b);
 const minus =(a,b) => (a-b); 
 const divide =(a,b) => (a/b); 
 const times = (a,b) => (a*b);
 
 
+// This needs to grab the currently displayed number and assign it to the correct value.
+function testGrab (currentInteger) {
+    if(typeof(currentInteger) === "number" && a == null) {
+     return a = currentInteger;
+    } else if (typeof(currentInteger) === "number" && a !== null){
+        return b = currentInteger;
+    } else if (typeof(currentInteger) === "string"){
+        return operand = currentInteger; 
+    }
+  return;
+};
 
 
-//This function needs to destructure current array
-//return the correct function
-//updatet he displayArray to current value. 
-//needs to be called at all times when operand has acceptable values. 
-function equals (array) {
-    let a = array[0]; 
-    let b = array[2];
-    let operator = array[1];
+// This function needs to be called upon all operand presses.
+// If statements need to be added to check that all three variables are declared (if (!= null))
+function equals () {
         switch(operator) {
             case ("+"):
                 return add(a,b);
@@ -76,15 +65,8 @@ const operatorBtns = document.querySelectorAll(".operatorButton")
     }));
  
 
-// is called upon mouse clicks.
+// is called upon mouse clicks. 
 function updateDisplay (arg) {
     currentArray.push(arg);  
   return displayText.textContent = currentArray.join("");
-};
-
-function storeVars (array){
-    let compactArray = parseInt(array); 
-    if(compactArray === NaN){
-        return operand = compactArray; 
-    }
 };
