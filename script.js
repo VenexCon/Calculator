@@ -9,13 +9,22 @@ let a = null;
 let b = null;
 let operand = null;
 let total = null;
+let currentInteger = null; 
+//Base functions
 const add = (a,b) => (a+b);
 const minus =(a,b) => (a-b); 
 const divide =(a,b) => (a/b); 
 const times = (a,b) => (a*b);
 
 
-// This needs to grab the currently displayed number and assign it to the correct value.
+//This function takes the currentArray and turns it into a string. 
+function convertArraytoString (currentArray){
+    if (typeof(currentArray[0]) === "number" ){
+  return parseInt(currentArray.join(""));
+    } else return currentInteger = (currentArray.join(""));
+};
+
+// This needs to grab the currentlystored integer and assigns it to the correct variable.
 function testGrab (currentInteger) {
     if(typeof(currentInteger) === "number" && a == null) {
      return a = currentInteger;
@@ -31,25 +40,26 @@ function testGrab (currentInteger) {
 // This function needs to be called upon all operand presses.
 // If statements need to be added to check that all three variables are declared (if (!= null))
 function equals () {
+    if (a !== null && b!== null && operand !== null){
         switch(operator) {
             case ("+"):
-                return add(a,b);
+                return total = add(a,b);
             break;
             case ("-"):
-               return minus(a, b);
+               return total = minus(a, b);
             break;
             case("*"):
-                return times(a,b)
+                return total = times(a,b)
             break;
             case("/"):
-               return divide(a,b);
+               return total = divide(a,b);
             break; 
         }
+    } else return
     };
 
 
-
-// all number buttons, return intergers. 
+// All number buttons, return intergers. 
 const numberBtns = document.querySelectorAll(".numberButton")
     numberBtns.forEach(btn => btn.addEventListener("click", (e) =>{
     console.log(parseInt(e.target.textContent));
@@ -57,7 +67,7 @@ const numberBtns = document.querySelectorAll(".numberButton")
     }));
 
 
-//all operand buttons 
+//All operand buttons 
 const operatorBtns = document.querySelectorAll(".operatorButton")
     operatorBtns.forEach(btn => btn.addEventListener("click", (e) =>{
     console.log(e.target.textContent);
@@ -65,7 +75,7 @@ const operatorBtns = document.querySelectorAll(".operatorButton")
     }));
  
 
-// is called upon mouse clicks. 
+// Is called upon mouse clicks. 
 function updateDisplay (arg) {
     currentArray.push(arg);  
   return displayText.textContent = currentArray.join("");
