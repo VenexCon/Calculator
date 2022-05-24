@@ -28,14 +28,15 @@ function convertArraytoString (currentArray){
 // This needs to grab the currently stored integer and assigns it to the correct variable.
 function assignCurrentInteger (currentInteger) {
     if(typeof(currentInteger) === "number" && a == null) { // total replaces this once first initialised.
-     return a = currentInteger;
+     return a = currentInteger
     } else if (typeof(currentInteger) === "number");{ // this b statement can be gotten rid off to ensure that the variable can be assigned.
-        return b = currentInteger;
+        return b = currentInteger
     } else if (typeof(currentInteger) === "string"){
-        return operand = currentInteger; 
+        return operand = currentInteger
     }
   return;
 };
+
 
 //this then needs to clear the current array. 
 
