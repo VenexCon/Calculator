@@ -4,14 +4,13 @@
 
 //CONSTS
 const displayText = document.getElementById("display") 
-let currentArray = [1,2,3];
-let currentArray2 = [4,5,6];
-let currentArrayO = ["+"];
+let currentArray = [];
 let total = null;
 let a = null;
 let b = null;
 let operand = null;
 let currentinteger = null; 
+
 //Base functions
 const add = (a,b) => (a+b);
 const minus =(a,b) => (a-b); 
@@ -26,11 +25,11 @@ function convertArraytoString (currentArray){
     } else return currentInteger = (currentArray.join(""));
 };
 
-// This needs to grab the currentlystored integer and assigns it to the correct variable.
-function testGrab (currentInteger) {
-    if(typeof(currentInteger) === "number" && a == null) {
+// This needs to grab the currently stored integer and assigns it to the correct variable.
+function assignCurrentInteger (currentInteger) {
+    if(typeof(currentInteger) === "number" && a == null) { // total replaces this once first initialised.
      return a = currentInteger;
-    } else if (typeof(currentInteger) === "number" && a !== null){
+    } else if (typeof(currentInteger) === "number");{ // this b statement can be gotten rid off to ensure that the variable can be assigned.
         return b = currentInteger;
     } else if (typeof(currentInteger) === "string"){
         return operand = currentInteger; 
@@ -38,6 +37,12 @@ function testGrab (currentInteger) {
   return;
 };
 
+//this then needs to clear the current array. 
+
+function clearCurrentArray () {
+  displayText.textContent = currentArray.join("");
+  return currentArray = [];
+}
 
 // This function needs to be called upon all operand presses.
 // If statements need to be added to check that all three variables are declared (if (!= null))
@@ -57,7 +62,7 @@ function equals () {
                return total = divide(a,b);
             break; 
         }
-    } else return console.log("more Operators needed")
+    } else console.log("more Operators needed")
     };
 
 
@@ -73,6 +78,9 @@ const numberBtns = document.querySelectorAll(".numberButton")
 const operatorBtns = document.querySelectorAll(".operatorButton")
     operatorBtns.forEach(btn => btn.addEventListener("click", (e) =>{
     console.log(e.target.textContent);
+    equals(); 
+    convertArraytoString (currentArray);
+    assignCurrentInteger (currentInteger);
     return updateDisplay(e.target.textContent)
     }));
  
@@ -84,10 +92,3 @@ function updateDisplay (arg) {
 };
 
 // Test run 1
-console.log(convertArraytoString(currentArray))
-console.log(testGrab(currentInteger));
-console.log(convertArraytoString(currentArray2))
-console.log(testGrab(currentInteger));
-console.log(convertArraytoString(currentArrayO))
-console.log(testGrab(currentInteger))
-console.log(equals())
