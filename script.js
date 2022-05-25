@@ -5,17 +5,17 @@
 //CONSTS
 const displayText = document.getElementById("display") 
 let currentArray = [];
-let total = null;
+let total; 
 let a = null;
 let b = null;
 let operand = null;
 let currentinteger = null; 
-
 //Base functions
 const add = (a,b) => (a+b);
 const minus =(a,b) => (a-b); 
 const divide =(a,b) => (a/b); 
 const times = (a,b) => (a*b);
+
 
 
 //This function takes the currentArray and turns it into a string. 
@@ -27,22 +27,22 @@ function convertArraytoString (currentArray){
 
 // This needs to grab the currently stored integer and assigns it to the correct variable.
 function assignCurrentInteger (currentInteger) {
-    if(typeof(currentInteger) === "number" && a == null) { // total replaces this once first initialised.
+    if (typeof(currentInteger) === "number" && a == null) { // total replaces this once first initialised.
      return a = currentInteger
-    } else if (typeof(currentInteger) === "number");{ // this b statement can be gotten rid off to ensure that the variable can be assigned.
+    } else if (typeof(currentInteger) === "number"){ // this b statement can be gotten rid off to ensure that the variable can be assigned.
         return b = currentInteger
     } else if (typeof(currentInteger) === "string"){
-        return operand = currentInteger
+        return operand = currentInteger;
     }
   return;
 };
 
-
 //this then needs to clear the current array. 
 
 function clearCurrentArray () {
+  let clearedArray = [];
   displayText.textContent = currentArray.join("");
-  return currentArray = [];
+  return currentArray = clearedArray;
 }
 
 // This function needs to be called upon all operand presses.
@@ -51,16 +51,16 @@ function equals () {
     if (a !== null && b!== null && operand !== null){
         switch(operand) {
             case ("+"):
-                return total = add(a,b);
+                return a = add(a,b);
             break;
             case ("-"):
-               return total = minus(a, b);
+               return a = minus(a, b);
             break;
             case("*"):
-                return total = times(a,b)
+                return a = times(a,b)
             break;
             case("/"):
-               return total = divide(a,b);
+               return a = divide(a,b);
             break; 
         }
     } else console.log("more Operators needed")
@@ -71,6 +71,9 @@ function equals () {
 const numberBtns = document.querySelectorAll(".numberButton")
     numberBtns.forEach(btn => btn.addEventListener("click", (e) =>{
     console.log(parseInt(e.target.textContent));
+       convertArraytoString (currentArray);
+    assignCurrentInteger (currentInteger);
+      clearCurrentArray(); 
     return updateDisplay(parseInt(e.target.textContent));
     }));
 
@@ -79,9 +82,10 @@ const numberBtns = document.querySelectorAll(".numberButton")
 const operatorBtns = document.querySelectorAll(".operatorButton")
     operatorBtns.forEach(btn => btn.addEventListener("click", (e) =>{
     console.log(e.target.textContent);
-    equals(); 
     convertArraytoString (currentArray);
     assignCurrentInteger (currentInteger);
+    equals(); 
+    clearCurrentArray(); 
     return updateDisplay(e.target.textContent)
     }));
  
@@ -93,3 +97,4 @@ function updateDisplay (arg) {
 };
 
 // Test run 1
+
