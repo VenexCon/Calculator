@@ -3,13 +3,13 @@
 // repeat until equals sign is pressed. 
 
 //CONSTS
-const displayText = document.getElementById("display") 
+const displayText = document.getElementById("display") ;
+const equalsBtn = document.getElementById("equals");
 let currentArray = [];
-let total; 
-let a = null;
+let a = 0;
 let b = null;
 let operand = null;
-let currentinteger = null; 
+let currentInteger = null; 
 //Base functions
 const add = (a,b) => (a+b);
 const minus =(a,b) => (a-b); 
@@ -27,7 +27,7 @@ function convertArraytoString (currentArray){
 
 // This needs to grab the currently stored integer and assigns it to the correct variable.
 function assignCurrentInteger (currentInteger) {
-    if (typeof(currentInteger) === "number" && a == null) { // total replaces this once first initialised.
+    if (typeof(currentInteger) === "number" && a == null) {
      return a = currentInteger
     } else if (typeof(currentInteger) === "number"){ // this b statement can be gotten rid off to ensure that the variable can be assigned.
         return b = currentInteger
@@ -51,7 +51,7 @@ function equals () {
     if (a !== null && b!== null && operand !== null){
         switch(operand) {
             case ("+"):
-                return a = add(a,b);
+              return  a = add(a,b);
             break;
             case ("-"):
                return a = minus(a, b);
@@ -63,7 +63,7 @@ function equals () {
                return a = divide(a,b);
             break; 
         }
-    } else console.log("more Operators needed")
+    } else return;
     };
 
 
@@ -71,9 +71,11 @@ function equals () {
 const numberBtns = document.querySelectorAll(".numberButton")
     numberBtns.forEach(btn => btn.addEventListener("click", (e) =>{
     console.log(parseInt(e.target.textContent));
-       convertArraytoString (currentArray);
-    assignCurrentInteger (currentInteger);
-      clearCurrentArray(); 
+      convertArraytoString (currentArray);
+      assignCurrentInteger (currentInteger);
+      if (typeof(currentInteger) === "string"){
+      clearCurrentArray();
+      }
     return updateDisplay(parseInt(e.target.textContent));
     }));
 
@@ -89,6 +91,15 @@ const operatorBtns = document.querySelectorAll(".operatorButton")
     return updateDisplay(e.target.textContent)
     }));
  
+//equals Button Display update
+equalsBtn.addEventListener("click", (e) => {
+  convertArraytoString (currentArray)
+  assignCurrentInteger (currentInteger) 
+  clearCurrentArray()
+  equals()
+  updateDisplay(a)
+})
+
 
 // Is called upon mouse clicks. 
 function updateDisplay (arg) {
@@ -96,5 +107,25 @@ function updateDisplay (arg) {
   return displayText.textContent = currentArray.join("");
 };
 
-// Test run 1
+const resetOperand = () => operand = null; 
+const resetA = () => a = null; 
+const resetB = () => b = null; 
+const resetInteger= () => currentInteger = null; 
+
+
+//allClearFunction
+function resetAll () {
+  resetOperand()
+  resetA()
+  resetB()
+  resetInteger()
+  clearCurrentArray();
+  console.log("Successful Reset");
+  return updateDisplay("");
+}
+const allClearBtn = document.getElementById("allClear");
+allClearBtn.addEventListener("click", () => {
+  resetAll(); 
+})
+
 
