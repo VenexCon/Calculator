@@ -5,7 +5,7 @@
 //CONSTS
 const displayText = document.getElementById("display") ;
 const equalsBtn = document.getElementById("equals");
-let currentArray = [];
+let currentArray = Array.from(displayText);
 let a = null;
 let b = parseInt(displayText);
 let operand = null;
@@ -27,7 +27,7 @@ function convertArraytoString (currentArray){
 
 // This needs to grab the currently stored integer and assigns it to the correct variable.
 function assignCurrentInteger (currentInteger) {
-    if (typeof(currentInteger) === "number" && a == null) {
+    if (typeof(currentInteger) === "number" && operand === "") {
      return a = currentInteger
     } else if (typeof(currentInteger) === "number"){ // this b statement can be gotten rid off to ensure that the variable can be assigned.
         return b = currentInteger
