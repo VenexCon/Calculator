@@ -6,8 +6,8 @@
 const displayText = document.getElementById("display") ;
 const equalsBtn = document.getElementById("equals");
 let currentArray = [];
-let a = 0;
-let b = null;
+let a = null;
+let b = parseInt(displayText);
 let operand = null;
 let currentInteger = null; 
 //Base functions
@@ -41,7 +41,7 @@ function assignCurrentInteger (currentInteger) {
 
 function clearCurrentArray () {
   let clearedArray = [];
-  displayText.textContent = currentArray.join("");
+  displayText.textContent = clearedArray.join("");
   return currentArray = clearedArray;
 }
 
@@ -109,7 +109,7 @@ function updateDisplay (arg) {
 
 const resetOperand = () => operand = null; 
 const resetA = () => a = null; 
-const resetB = () => b = null; 
+const resetB = () => b = parseInt(displayText); 
 const resetInteger= () => currentInteger = null; 
 
 
@@ -127,5 +127,10 @@ const allClearBtn = document.getElementById("allClear");
 allClearBtn.addEventListener("click", () => {
   resetAll(); 
 })
+//instead of using push array, just tke the array as it appears in the dipslay text , this ensures that you are not relying on a 
+// seperate operand to push the final value onto the array. 
+// when t takes the array it will take the whole number and not require a push. 
 
-
+//ie convertArrytoString(Array.from(displaytext)), use ths inlieu of current array to select the whole array. i.e this way the value is taken from parseint the display string. 
+// will then use operand button to input the operand!
+// i.e the operan button will see if ll values are present with equals, but if not it will assign the relevant integer, once this is finished it should work as normal. 
