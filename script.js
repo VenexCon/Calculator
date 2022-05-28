@@ -7,49 +7,52 @@ const displayText = document.getElementById("display") ;
 const equalsBtn = document.getElementById("equals");
 let currentArray = Array.from(displayText);
 let a = null;
-let b = displayText;
+let b = parseFloat(displayText);
 let operand = null;
 let currentInteger = null;
 
 
+
 //Base functions
 const add = (a,b) => (a+b);
-const minus =(a,b) => (a-b); 
-
-const divide =(a,b) => {if (b == 0) {
-  return "You broke it" 
-}else return (a/b)}; 
-
+const minus =(a,b) => (a-b);
+const divide =(a,b) => {if (b == 0) {return "You broke it" } else return Math.round((a/b)*100)/100;}; 
 const times = (a,b) => Math.round((a*b)*100)/100;
 
-//Functions Section 
 
+
+
+//Functions Section 
 //This function takes the currentArray and turns it into a string. 
 function convertArraytoString (currentArray){
     if (typeof(currentArray[0]) === "number" ){
-  return currentInteger = parseInt(currentArray.join(""));
+  return currentInteger = parseFloat(currentArray.join(""));
     } else return currentInteger = (currentArray.join(""));
 };
+
 
 // This needs to grab the currently stored integer and assigns it to the correct variable.
 function assignCurrentInteger (currentInteger) {
     if (typeof(currentInteger) === "number" && operand === "") {
      return a = currentInteger
-    } else if (typeof(currentInteger) === "number"){ // this b statement can be gotten rid off to ensure that the variable can be assigned.
+    } else if (typeof(currentInteger) === "number"){
         return b = currentInteger
-    } else if (typeof(currentInteger) === "string"){
+    } else if (currentInteger === "+" || "-" || "*" || "/" ){
         return operand = currentInteger;
     }
   return;
 };
 
-//this needs to clear the current array. 
 
+
+//this needs to clear the current array. 
 function clearCurrentArray () {
   let clearedArray = [];
   displayText.textContent = clearedArray.join("");
   return currentArray = clearedArray;
 }
+
+
 
 // This function needs to be called upon all operand presses.
 function equals () {
@@ -83,7 +86,7 @@ const numberBtns = document.querySelectorAll(".numberButton")
       if (typeof(currentInteger) === "string"){
       clearCurrentArray();
       }
-    return updateDisplay(e.target.textContent);
+    return updateDisplay(parseInt(e.target.textContent));
     }));
 
 
@@ -99,7 +102,7 @@ const operatorBtns = document.querySelectorAll(".operatorButton")
     }));
  
 
-//equals Button Display update
+//equals Button 
 equalsBtn.addEventListener("click", (e) => {
   convertArraytoString (currentArray)
   assignCurrentInteger (currentInteger) 
@@ -115,9 +118,11 @@ function updateDisplay (arg) {
   return displayText.textContent = currentArray.join("");
 };
 
+
+// RESET Consts
 const resetOperand = () => operand = null; 
 const resetA = () => a = null; 
-const resetB = () => b = parseInt(displayText); 
+const resetB = () => b = parseFloat(displayText); 
 const resetInteger= () => currentInteger = null; 
 
 
@@ -134,11 +139,13 @@ function resetAll () {
 const allClearBtn = document.getElementById("allClear");
 allClearBtn.addEventListener("click", () => {
   resetAll(); 
-})
-//instead of using push array, just tke the array as it appears in the dipslay text , this ensures that you are not relying on a 
-// seperate operand to push the final value onto the array. 
-// when t takes the array it will take the whole number and not require a push. 
+});
 
-//ie convertArrytoString(Array.from(displaytext)), use ths inlieu of current array to select the whole array. i.e this way the value is taken from parseint the display string. 
-// will then use operand button to input the operand!
-// i.e the operan button will see if ll values are present with equals, but if not it will assign the relevant integer, once this is finished it should work as normal. 
+
+
+//Decimal Input 
+decimalBtn = document.querySelector(".decimalButton"); 
+  decimalBtn.addEventListener("click", (e) => {
+    console.log(e)
+    return updateDisplay(e.target.textContent)
+  });

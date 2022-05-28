@@ -31,8 +31,8 @@ body{
     display: grid;
     grid-template-columns: repeat(autofit, minmax(0px,  1fr));
     grid-template-rows: repeat(autofit, minmax(0px,  1fr));
-    grid-column-gap:0.25em;
-    grid-row-gap: 0.25em;
+    grid-column-gap:0.5em;
+    grid-row-gap: 0.5em;
     grid-template-areas: 
     "display display display display display"
     ". . . . equals"
@@ -42,7 +42,7 @@ body{
     "zero . . divide.";
     border-style: solid;
     padding: 0.5em;
-    width: min-content;
+    width: fit-content;
     margin: auto;
 }
 
@@ -81,10 +81,9 @@ body{
     border: #E5EB38;
     border-style: solid;
     border-width: 0.15em;
-    text-align: center;
     justify-self: center;
     min-width: none;
-    max-width:min-content;
+    max-width: 4rem;
 }
 
 
