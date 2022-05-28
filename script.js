@@ -7,7 +7,7 @@ const displayText = document.getElementById("display") ;
 const equalsBtn = document.getElementById("equals");
 let currentArray = Array.from(displayText);
 let a = null;
-let b = parseInt(displayText);
+let b = displayText;
 let operand = null;
 let currentInteger = null;
 
@@ -83,7 +83,7 @@ const numberBtns = document.querySelectorAll(".numberButton")
       if (typeof(currentInteger) === "string"){
       clearCurrentArray();
       }
-    return updateDisplay(parseInt(e.target.textContent));
+    return updateDisplay(e.target.textContent);
     }));
 
 
@@ -98,7 +98,7 @@ const operatorBtns = document.querySelectorAll(".operatorButton")
     return updateDisplay(e.target.textContent)
     }));
  
-    
+
 //equals Button Display update
 equalsBtn.addEventListener("click", (e) => {
   convertArraytoString (currentArray)
