@@ -12,15 +12,24 @@ body{
     margin-top: 5em;
 }
 
+.titleContainer{
+    margin: 0; 
+    text-align: center;
+    font-size: 1.5rem;
+    text-decoration: underline;
+    font-style: italic;
+}
+
+
+
+
 
 /*Contains keyboard & display */
 
 .container{
     width: 50%;
     margin: auto;
-    padding-top: 25%;
-    border-style:solid;
-    border-color: red; 
+    padding-top: 25%; 
     padding: 1em;
     width: min-content;
 }
@@ -40,7 +49,7 @@ body{
     "four five six minus."
     "one two three times."
     "zero . . divide.";
-    border-style: solid;
+   
     padding: 0.5em;
     width: fit-content;
     margin: auto;
@@ -50,7 +59,7 @@ body{
     grid-area: display;
     width: 75%; 
     height: min-content;
-    border:#e9f022cb;; 
+    border:#e3eb0bcb;; 
     border-style: solid;
     border-width: 0.25em;
     padding: 0.01em 0.5em;
@@ -61,10 +70,11 @@ body{
     font-size: x-large;
     overflow: hidden;
     max-width: 100%;
+    color: #b10a79
 }
 
 .calcButton:hover{
-    box-shadow: 0.15em 0.1em #74a00c;
+    box-shadow: 0.15em 0.1em #b10a79;
 }
 .calcButton:active{
     box-shadow: none;
@@ -78,12 +88,13 @@ body{
 .calcButton {
     margin-top: 1em;
     padding:1.5em; 
-    border: #E5EB38;
+    border: #75773c;
     border-style: solid;
     border-width: 0.15em;
     justify-self: center;
     min-width: none;
     max-width: 4rem;
+    font-size: medium;
 }
 
 
@@ -129,4 +140,18 @@ body{
 
 #allClear{
     grid-area: times;
+}
+
+.contactContainer {
+    margin:4em auto;
+    text-align: center;
+}
+
+ a {
+    text-decoration: none;
+    color: #e9f022cb;
+}
+
+a:hover {
+    color: #b10a79
 }

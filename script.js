@@ -16,7 +16,7 @@ let currentInteger = null;
 //Base functions
 const add = (a,b) => (a+b);
 const minus =(a,b) => (a-b);
-const divide =(a,b) => {if (b == 0) {return "You broke it" } else return Math.round((a/b)*100)/100;}; 
+const divide =(a,b) => {if (b == 0) {return clearCurrentArray() } else return Math.round((a/b)*100)/100;}; 
 const times = (a,b) => Math.round((a*b)*100)/100;
 
 
