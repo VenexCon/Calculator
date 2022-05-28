@@ -9,14 +9,20 @@ let currentArray = Array.from(displayText);
 let a = null;
 let b = parseInt(displayText);
 let operand = null;
-let currentInteger = null; 
+let currentInteger = null;
+
+
 //Base functions
 const add = (a,b) => (a+b);
 const minus =(a,b) => (a-b); 
-const divide =(a,b) => (a/b); 
-const times = (a,b) => (a*b);
 
+const divide =(a,b) => {if (b == 0) {
+  return "You broke it" 
+}else return (a/b)}; 
 
+const times = (a,b) => Math.round((a*b)*100)/100;
+
+//Functions Section 
 
 //This function takes the currentArray and turns it into a string. 
 function convertArraytoString (currentArray){
@@ -37,7 +43,7 @@ function assignCurrentInteger (currentInteger) {
   return;
 };
 
-//this then needs to clear the current array. 
+//this needs to clear the current array. 
 
 function clearCurrentArray () {
   let clearedArray = [];
@@ -46,7 +52,6 @@ function clearCurrentArray () {
 }
 
 // This function needs to be called upon all operand presses.
-// If statements need to be added to check that all three variables are declared (if (!= null))
 function equals () {
     if (a !== null && b!== null && operand !== null){
         switch(operand) {
@@ -54,7 +59,7 @@ function equals () {
               return  a = add(a,b);
             break;
             case ("-"):
-               return a = minus(a, b);
+               return a = minus(a,b);
             break;
             case("*"):
                 return a = times(a,b)
@@ -65,6 +70,8 @@ function equals () {
         }
     } else return;
     };
+
+    Math.round((a*b)*100)/100;
 
 
 // All number buttons, return intergers. 
@@ -91,6 +98,7 @@ const operatorBtns = document.querySelectorAll(".operatorButton")
     return updateDisplay(e.target.textContent)
     }));
  
+    
 //equals Button Display update
 equalsBtn.addEventListener("click", (e) => {
   convertArraytoString (currentArray)
