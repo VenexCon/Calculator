@@ -1,6 +1,6 @@
 # Calculator
 <hr>
-<h2><a href= "https://venexcon.github.io/Calculator/"> Link to live version</h2> 
+<h2><a href= "https://venexcon.github.io/Calculator/"> Link to live version</a></h2> 
 A repo for The Odin Projects Calculator project 
 <hr> 
 
